@@ -10,7 +10,8 @@ using namespace std;
 enum Option
 {
     ENTER = 1,
-    EXIT = 0
+    EXIT = 0,
+    SHOW = 2
 };
 
 class Town
@@ -21,7 +22,7 @@ class Town
     public:
         Town();
         // Town(vector <Household> households);
-        void enterData();
+        void enterHousehold();
         void showTown() const;
 };
 

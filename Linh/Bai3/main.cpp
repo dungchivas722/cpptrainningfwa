@@ -58,7 +58,7 @@ int main()
                 break;
         }
         cout << "____________________________" << endl;
-    } while (choice != 4);
+    } while (choice != ESCAPE);
 
     return 0;
 }

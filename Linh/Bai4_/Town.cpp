@@ -5,7 +5,7 @@ Town :: Town(){}
 // Town :: Town(vector <Household> households)
 //     :households(households){}
 
-void Town :: enterData()
+void Town :: enterHousehold()
 {
     int n;
     cout << "Enter the household number: ";
@@ -37,30 +37,32 @@ void Town :: enterData()
             {
                 case ENTER:
                 {
-                    string name_, job_, personID_;
-                    int age_;
-                    cout << endl;
-                    cout << "Enter information of member" << endl;
+                    Person tmpPerson;
+                    tmpPerson.enterPerson();
+                    // string name_, job_, personID_;
+                    // int age_;
+                    // cout << endl;
+                    // cout << "Enter information of member" << endl;
                     
-                    cin.ignore();
-                    cout << "Member's name: ";
-                    getline(cin, name_);
+                    // cin.ignore();
+                    // cout << "Member's name: ";
+                    // getline(cin, name_);
 
-                    cout << "Member's age: ";
-                    cin >> age_;
+                    // cout << "Member's age: ";
+                    // cin >> age_;
 
-                    cin.ignore();
-                    cout << "Member's job: ";
-                    getline(cin, job_);
+                    // cin.ignore();
+                    // cout << "Member's job: ";
+                    // getline(cin, job_);
 
-                    cout << "Member's personal identification: ";
-                    cin >> personID_;
+                    // cout << "Member's personal identification: ";
+                    // cin >> personID_;
 
                     bool found = false;
 
                     for (Person x : members_)
                     {
-                        if (x.getPersonID() == personID_)
+                        if (x.getPersonID() == tmpPerson.getPersonID())
                         {
                             found = true;
                             cout << endl;
@@ -74,7 +76,7 @@ void Town :: enterData()
                         vector <Person> mem = x.getPerson();
                         for (Person y : mem)
                         {
-                            if (y.getPersonID() == personID_)
+                            if (y.getPersonID() == tmpPerson.getPersonID())
                             {
                                 found = true;
                                 cout << endl;
@@ -93,8 +95,9 @@ void Town :: enterData()
                         break;
                     }
 
-                    Person pers(name_, age_, job_, personID_);
-                    members_.push_back(pers);
+                    // Person pers(name_, age_, job_, personID_);
+                    // members_.push_back(pers);
+                    members_.push_back(tmpPerson);
                     break;
                 }
                 case EXIT:

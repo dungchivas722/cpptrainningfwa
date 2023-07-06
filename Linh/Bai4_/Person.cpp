@@ -1,5 +1,7 @@
 #include "Person.h"
 
+Person :: Person(){}
+
 Person :: Person(string name, int age, string job, string personID)
     : name(name), age(age), job(job), personID(personID){}
 
@@ -43,6 +45,26 @@ void Person :: setPersonID(string personID)
 string Person :: getPersonID()
 {
     return this->personID;
+}
+
+void Person :: enterPerson()
+{
+    cout << endl;
+    cout << "Enter information of member" << endl;
+    
+    cin.ignore();
+    cout << "Member's name: ";
+    getline(cin, name);
+
+    cout << "Member's age: ";
+    cin >> age;
+
+    cin.ignore();
+    cout << "Member's job: ";
+    getline(cin, job);
+
+    cout << "Member's personal identification: ";
+    cin >> personID;
 }
 
 void Person :: showPerson() const

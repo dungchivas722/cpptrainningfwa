@@ -17,7 +17,7 @@ class Household
         void setAddress(string address);
         string getAddress();
         vector <Person> getPerson();
-
+        
         void showHousehold() const;
 };
 
