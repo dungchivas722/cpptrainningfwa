@@ -1,8 +1,7 @@
 #ifndef HOTEL_H
 #define HOTEL_H
 
-#include "Person.h"
-#include <vector>
+#include "person.h"
 
 enum Room
 {
