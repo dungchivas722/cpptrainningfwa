@@ -12,6 +12,13 @@ enum Job
     KYSU = 2, 
     NHANVIEN = 3
 };
+enum Menu
+{
+    THEM = 1,
+    TIMKIEM = 2,
+    HIEN = 3,
+    THOAT = 4
+};
 
 class QLCB{
     private:

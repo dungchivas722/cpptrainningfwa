@@ -30,14 +30,17 @@ void QLCB::themcanbo()
     case KYSU:
         {
             canboptr = new kysu();
+            break;
         }
     case NHANVIEN:
         {
             canboptr = new nhanvien();
+            break;
         }
     default:
         {
             choicecorrect = false;
+            break;
         }
     }
     if (choicecorrect) {

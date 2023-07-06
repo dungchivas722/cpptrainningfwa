@@ -19,16 +19,16 @@ int main()
 
         switch (choice)
         {
-        case 1:
+        case THEM:
             qlcb.themcanbo();
             break;
-        case 2:
+        case TIMKIEM:
             qlcb.timkiemtheoten();
             break;
-        case 3:
+        case HIEN:
             qlcb.hienthicanbo();
             break;
-        case 4:
+        case THOAT:
             cout << "bye :))" << endl;
             break;
         default:
