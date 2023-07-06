@@ -11,25 +11,28 @@ class Person
     private:
         string name;
         int age;
-        string job;
         string personID;
+        int rentDays;
+        string typeRoom;
 
     public:
         Person();
-        Person(string name, int age, string job, string personID);
+        Person(string name, int age, string personID, int rentDays, string typeRoom);
         ~Person();
 
         void setName(string name);
         string getName();
         void setAge(int age);
         int getAge();
-        void setJob(string job);
-        string getJob();
         void setPersonID(string personID);
         string getPersonID();
+        void setRentDays(int rentDays);
+        int getRentDays();
+        void setTypeRoom(string typeRoom);
+        string getTypeRoom();
 
-        void enterPerson();
-        void showPerson() const;
+        void enterInformation();
+        void showInformationPerson();
 };
 
 #endif /* PERSON_H */
