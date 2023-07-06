@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#define A 1 
-#define B 2
-#define C 3 
+#define ROOM_A 1 
+#define ROOM_B 2
+#define ROOM_C 3 
 
 using namespace std; 
 
@@ -41,29 +41,32 @@ void Hotel :: add_Customer() {
     while (!check_add_Id_card_number);
 
     //Choose type room and enter
+    bool check_room_add_Id_card_number;
     int choice; 
     do {
     cout << "Choose type room:" << endl;
     cout << "1. Room A 500$   2. Room B 300$   3. Room C 100$" << endl;
     cout << "Customer's choice: ";
+    check_room_add_Id_card_number = false;
     cin >> choice; 
     switch (choice)
     {
-    case A: 
+    case ROOM_A: 
         cost_type_room = 500; 
         break;
-    case B:
+    case ROOM_B:
         cost_type_room = 300;
         break;
-    case C:
+    case ROOM_C:
         cost_type_room = 100;
         break;
     default:
+        check_room_add_Id_card_number = true;
         cout << "Re-enter!!!!" << endl;
         break;
     }
     }
-    while(!check_add_Id_card_number);
+    while(check_room_add_Id_card_number);
 
     //Enter rental day 
     cout << "Enter rental day: ";
