@@ -71,8 +71,8 @@ void Person :: enterInformation()
 
     cin.ignore();
 
-    cout << "Renter's personal identification: ";
-    cin >> personID;
+    // cout << "Renter's personal identification: ";
+    // cin >> personID;
 
     // cout << "Number of rent days: ";
     // cin >> rentDays;
@@ -86,6 +86,6 @@ void Person :: showInformationPerson()
     cout << "Renter's name: " << name << endl;
     cout << "Renter's age: " << age << endl;
     cout << "Renter's personal identification: " << personID << endl;
-    cout << "Number of rent days: " << personID << endl;
+    cout << "Number of rent days: " << rentDays << endl;
     cout << "Type of room: " << typeRoom << endl;
 }

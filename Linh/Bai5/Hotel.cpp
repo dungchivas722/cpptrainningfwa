@@ -5,21 +5,30 @@ void Hotel :: addRenter()
     Person tmpPerson;
     int rentDays_;
     string typeRoom_;
+    string personID_;
 
     tmpPerson.enterInformation();
 
-    bool found = false;
+    bool found;
 
-    for (Person x : renterList)
+    do
     {
-        if (x.getPersonID() == tmpPerson.getPersonID())
+        cout << "Renter's personal identification: ";
+        cin >> personID_;
+        found = false;
+        for (Person x : renterList)
         {
-            found = true;
-            cout << endl;
-            cout << "Identification number already exists!" << endl;
-            return;
+            if (x.getPersonID() == personID_)
+            {
+                found = true;
+                cout << endl;
+                cout << "Identification number already exists!" << endl;
+                break;
+            }
         }
-    }
+    } 
+    while (found == true);
+    tmpPerson.setPersonID(personID_);
 
     cout << "Number of rent days: ";
     cin >> rentDays_;
