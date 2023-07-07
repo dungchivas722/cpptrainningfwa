@@ -1,6 +1,6 @@
 #include "Hotel.h"
 
-enum
+enum choices
 {
     ADD = 1,
     DEL = 2,

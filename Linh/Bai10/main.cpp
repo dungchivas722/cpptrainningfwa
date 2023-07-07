@@ -1,23 +1,24 @@
-#include "Library.h"
+#include "Text.h"
 
 enum choices
 {
-    ADD = 1,
-    DEL = 2,
-    SHW = 3,
+    ENT = 1,
+    CNT = 2,
+    NOR = 3,
     ESC = 0
 };
 
 int main()
 {
-    Library lib;
     int choice;
+    string s;
+    Text st;
 
     do {
         cout << "-------- MENU --------" << endl;
-        cout << "1. Add renter" << endl;
-        cout << "2. Delete renter" << endl;
-        cout << "3. Show renters" << endl;
+        cout << "1. Enter text" << endl;
+        cout << "2. Count character A - a" << endl;
+        cout << "3. Normalization the text" << endl;
         cout << "0. Escape" << endl;
         cout << "-----------------------" << endl;
         cout << "Enter your option (0 - 3): ";
@@ -26,24 +27,29 @@ int main()
 
         switch (choice) 
         {
-            case ADD:
+            case ENT:
             {
-                cout << "------------ADD------------" << endl;;
-                lib.addCard();
+                cout << "------------ENTER------------" << endl;;
+                cout << "Enter text: ";
+                getline(cin, s);
+                st.setText(s);
                 break;
             }
                 
-            case DEL: 
+            case CNT: 
             {
-                cout << "------------DELETE------------" << endl;
-                lib.deleteCard();
+                cout << "------------COUNT------------" << endl;
+                st.countA();
                 break;
             }
 
-            case SHW:
+            case NOR:
             {
-                cout << "------------SHOW------------" << endl;
-                lib.showCard();
+                cout << "------------NORMALIZATION------------" << endl;
+                cout << "____Before____" << endl;
+                cout << st.getText() << endl;
+                cout << "____After____" << endl;
+                st.textNormalization();
                 break;
             }
 
@@ -56,6 +62,7 @@ int main()
                 cout << "Your option is not valid!" << endl;
                 break;
         }
+        cout << endl;
         cout << "____________________________" << endl;
     } while (choice != ESC);
 
