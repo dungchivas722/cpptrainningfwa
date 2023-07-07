@@ -5,8 +5,6 @@ Person::Person() {}
 Person::Person(string name, int age, string personID, int rentDays, string typeRoom)
     : name(name), age(age), personID(personID), rentDays(rentDays), typeRoom(typeRoom) {}
 
-Person::~Person() {}
-
 void Person::setPersonID(string personID) {
     this->personID = personID;
 }

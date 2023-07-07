@@ -17,7 +17,6 @@ private:
 public:
     Person();
     Person(string name, int age, string personID, int rentDays, string typeRoom);
-    ~Person();
     void setPersonID(string personID);
     string getPersonID();
     void setRentDays(int rentDays);
