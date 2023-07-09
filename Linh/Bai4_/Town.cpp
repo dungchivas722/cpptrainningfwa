@@ -39,24 +39,6 @@ void Town :: enterHousehold()
                 {
                     Person tmpPerson;
                     tmpPerson.enterPerson();
-                    // string name_, job_, personID_;
-                    // int age_;
-                    // cout << endl;
-                    // cout << "Enter information of member" << endl;
-                    
-                    // cin.ignore();
-                    // cout << "Member's name: ";
-                    // getline(cin, name_);
-
-                    // cout << "Member's age: ";
-                    // cin >> age_;
-
-                    // cin.ignore();
-                    // cout << "Member's job: ";
-                    // getline(cin, job_);
-
-                    // cout << "Member's personal identification: ";
-                    // cin >> personID_;
 
                     bool found = false;
 
@@ -95,8 +77,6 @@ void Town :: enterHousehold()
                         break;
                     }
 
-                    // Person pers(name_, age_, job_, personID_);
-                    // members_.push_back(pers);
                     members_.push_back(tmpPerson);
                     break;
                 }

@@ -3,7 +3,8 @@
 #include "KySu.h"
 #include "NhanVien.h"
 
-void QLCB::addOfficer() {
+void QLCB::addOfficer() 
+{
     int choice;
     cout << "1. Add a worker" << endl;
     cout << "2. Add a engineer" << endl;
