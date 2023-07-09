@@ -61,13 +61,15 @@ class Employee
     
     public:
         Employee();
-        Employee(string id, string fullname, string birthday, string phone, string email, int employee_type, int employee_count);
+        Employee(string id, string fullname, string birthday, string phone, string email, int employee_type);
         virtual ~Employee();
 
         void setID(string id);
         string getID();
         void setEmployeeType(int employee_type);
         int getEmployeeType();
+        void setEmployeeCount(int employee_count);
+        int getEmployeeCount();
 
         virtual void enterEmployee();
         virtual void showEmployee() = 0;

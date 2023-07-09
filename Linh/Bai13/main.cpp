@@ -67,6 +67,7 @@ int main()
             {
                 cout << "------------SHOW------------" << endl;
                 cout << "Show employee list" << endl;
+                // cout << 
                 manage.showList();
                 break;
             }

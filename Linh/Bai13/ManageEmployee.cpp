@@ -58,6 +58,7 @@ void ManageEmployee :: addEmployee()
                 tmpIntern->setEmployeeType(INTERN);
                 tmpIntern->enterEmployee();
                 employeeList.push_back(tmpIntern);
+                // tmpIntern->setEmployeeCount(employeeList.size());
                 break;
             }
 
@@ -76,6 +77,7 @@ void ManageEmployee :: addEmployee()
                 tmpFresher->setEmployeeType(FRESHER);
                 tmpFresher->enterEmployee();
                 employeeList.push_back(tmpFresher);
+                // tmpFresher->setEmployeeCount(employeeList.size());
                 break;
             }
 
@@ -94,6 +96,7 @@ void ManageEmployee :: addEmployee()
                 tmpExperience->setEmployeeType(EXPERIENCE);
                 tmpExperience->enterEmployee();
                 employeeList.push_back(tmpExperience);
+                // tmpExperience->setEmployeeCount(employeeList.size());
                 break;
             }
 
@@ -165,11 +168,14 @@ void ManageEmployee :: deleteEmployee()
 void ManageEmployee :: showList()
 {
     int i = 1;
+    cout << endl;
+    cout << "There are " << employeeList.size() << " employee!" <<endl;
     for (Employee *x : employeeList)
     {
         cout << endl;
         cout << "Employee " << i++ << "!" << endl;
         x->showEmployee();
+        // x->getEmployeeCount();
         cout << endl;
     }
 }

@@ -45,9 +45,8 @@ bool isValidPhoneNumber(const string& phone)
 
 Employee :: Employee(){}
 
-Employee :: Employee(string id, string fullname, string birthday, string phone, string email, int employee_type, int employee_count)
-    : id(id), fullname(fullname), birthday(birthday), phone(phone), email(email),   \
-    employee_type(employee_type), employee_count(employee_count){}
+Employee :: Employee(string id, string fullname, string birthday, string phone, string email, int employee_type)
+    : id(id), fullname(fullname), birthday(birthday), phone(phone), email(email), employee_type(employee_type){}
 
 Employee :: ~Employee()
 {
@@ -213,4 +212,14 @@ void Employee :: setEmployeeType(int employee_type)
 int Employee :: getEmployeeType()
 {
     return this->employee_type;
+}
+
+void Employee :: setEmployeeCount(int employee_count)
+{
+   this->employee_count = employee_count;
+}
+
+int Employee :: getEmployeeCount()
+{
+    return this->employee_count;
 }
