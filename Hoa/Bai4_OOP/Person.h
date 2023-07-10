@@ -1,5 +1,8 @@
-#pragma once
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <iostream>
+#include <string> 
 using namespace std; 
 class Person {
 private:
@@ -8,15 +11,9 @@ private:
     string job;
     int id_card_number;
 public: 
-    Person();
-    Person(string name, int age, string job, int id_card_number);
-    void setName(string name);
-    void setAge(int age);
-    void setJob(string job);
-    void setId_card_number(int id_card_number);
-    string getName();
-    int getAge();
-    string getJob();
-    int getId_card_number();
-    void display();
+    void addPerson();
+    void getPerson();
+    void setID_card(int id);
 };
+
+#endif

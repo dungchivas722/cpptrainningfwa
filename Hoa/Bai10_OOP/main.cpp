@@ -27,7 +27,6 @@ int main() {
         {
             case ENTER:
             {
-                cout << "------------ENTER------------" << endl;;
                 cout << "Enter text: ";
                 getline(cin, s);
                 txt.setText(s);
@@ -36,14 +35,12 @@ int main() {
                 
             case COUNT: 
             {
-                cout << "------------COUNT------------" << endl;
                 txt.countCharA();
                 break;
             }
 
             case NORMALIZE:
             {
-                cout << "------------NORMALIZATION------------" << endl;
                 cout << "____Before____" << endl;
                 cout << txt.getText() << endl;
                 cout << "____After____" << endl;
@@ -53,7 +50,7 @@ int main() {
 
             case EXIT:
             {
-                cout << "------------ESCAPE------------" << endl;
+                cout << "Exit!!!!!" << endl;
                 break;
             }
             default:
@@ -61,7 +58,7 @@ int main() {
                 break;
         }
         cout << endl;
-        cout << "____________________________" << endl;
+        cout << "==========================================================" << endl;
     } while (choice != EXIT);
 
     return 0; 

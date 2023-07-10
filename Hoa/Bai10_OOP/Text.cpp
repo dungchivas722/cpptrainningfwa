@@ -1,6 +1,8 @@
 #include "Text.h"
 #include <string>
+
 Text::Text(){};
+
 Text::Text(string txt) : txt(txt){};
 
  string Text ::getText() {
@@ -20,6 +22,7 @@ int Text :: countCharA() {
 
     return cnt;
 }
+
 void Text :: normalizeText() {
     // Remove leading and trailing blanks
     while (!txt.empty() && txt.front() == ' ') {

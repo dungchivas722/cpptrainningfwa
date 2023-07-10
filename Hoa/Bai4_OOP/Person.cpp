@@ -1,38 +1,23 @@
+//...............................................................
 #include "Person.h"
-Person :: Person() {}
-Person :: Person(string name, int age, string job, int id_card_number) {
-    this->name = name;
-    this->age = age; 
-    this->job = job;
-    this-> id_card_number = id_card_number;
+void Person :: addPerson() {
+    cin.ignore();
+    cout << "Enter name: ";
+    getline(cin, name);
+    cout << "Enter age: ";
+    cin >> age; 
+    cout << "Enter job: ";
+    cin.ignore();
+    getline(cin, job);
 }
-void Person :: setName(string name) {
-    this -> name = name ;
+//Make id_card_number variable names more concise
+void Person :: setID_card(int id) {
+    id_card_number = id;
 }
-void Person :: setAge(int age) {
-    this -> age = age; 
-}
-void Person :: setJob(string job) {
-    this -> job = job;
-}
-void Person :: setId_card_number(int id_card_number) {
-    this -> id_card_number = id_card_number;
-}
-string Person::getName(){
-    return name; 
-}
-int Person::getAge(){
-    return age; 
-}
-string Person::getJob(){
-    return job; 
-}
-int Person::getId_card_number(){
-    return id_card_number;
-}
-void Person::display() {
-    cout << "Name: "<< getName() << endl;
-    cout << "Age: " << getAge() << endl;
-    cout << "Job: " << getJob() << endl;
-    cout << "ID Card Number:"<< getId_card_number() <<endl;
+
+void Person :: getPerson() {
+    cout << name << endl;
+    cout << age << endl;
+    cout << job << endl;
+    cout << id_card_number << endl; 
 }

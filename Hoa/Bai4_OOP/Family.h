@@ -1,21 +1,20 @@
-#pragma once
+#ifndef Family1_H
+#define Family1_H
+
 #include <iostream>
 #include "Person.h"
 #include <vector>
-using namespace std; 
-class Family {
+
+class Family1 {
     private: 
         int num_people; 
         int num_address; 
-        vector<Person*> listPeople;
+        
     public:
-        Family();
-        Family(int num_people, int num_address);
-        void setNum_people(int num_people);
-        void setNum_address(int num_address);
-        int getNum_people();
-        int getNum_address();
-        void display();
-        void Add_people();
-        ~Family();
+        vector<Person> listPeople; //public then to addFamily1 function, can accessed
+        Family1(int num_people, int num_address);
+        void getMember();
+        ~Family1();
 };
+
+#endif

@@ -10,6 +10,7 @@ class Hotel {
         vector <Person*> listCustomer;
     public: 
         Hotel();
+        
         void add_Customer();
         void delete_Customer();
         void calculate_Payment();

@@ -1,19 +1,19 @@
-#pragma once
-#include <vector>
-#include <iostream>
+#ifndef TOWN_H
+#define TOWN_H
+
+#include <set>
 #include "Family.h"
 
 using namespace std; 
 class Town {
     private:    
-        int num_family;
-        vector <Family*> listFamilies;
-    
+        int num_Family1;
     public: 
-        Town();
-        void setNum_family(int num_family);
-        int getNum_family();
-        void Add_family();
-        void display(); 
+        vector <Family1> listFamilies;
+        set <int> tmp_id_card;
+        void getFamily1();
+        void addFamily1();
         ~Town();
 };
+
+#endif
