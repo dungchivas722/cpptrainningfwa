@@ -16,13 +16,16 @@ int main(){
         switch (choice)
             {
             case ADD:
-                n.them();
+                // n.them();
+                n.them_map();
                 break;
             case DELETE:
-                n.xoa_ma();
+                // n.xoa_ma();
+                n.xoa_map();
                 break;
             case SHOW: 
-                n.hienthi();
+                // n.hienthi();
+                n.hienthimap();
                 break;  
             case EXIT: 
                 break;

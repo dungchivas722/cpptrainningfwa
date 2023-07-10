@@ -9,8 +9,8 @@ void TheMuon::insert(set<int>& A) {
 
         if (A.count(maphieumuon) == 0) {
             A.insert(maphieumuon);
+            cin.ignore();
             cout << "Enter book loan day: ";
-            cin.ignore(); 
             getline(cin, ngaymuon);
             cout << "Enter return day: ";
             getline(cin, ngaytra);
@@ -22,6 +22,19 @@ void TheMuon::insert(set<int>& A) {
             cout << "Enter again!!" << endl;
         }
     } while (dem == 0);
+}
+
+void TheMuon::insert_map() {
+    SinhVien::insert_map();
+    cout << "Enter loan coupon code: ";
+    cin >> maphieumuon;
+        cin.ignore();
+        cout << "Enter book loan day: ";
+        getline(cin, ngaymuon);
+        cout << "Enter return day: ";
+        getline(cin, ngaytra);
+        cout << "Enter bookstore num: ";
+        getline(cin, sohieusach);
 }
 
 void TheMuon::display() {

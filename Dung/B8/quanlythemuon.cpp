@@ -1,5 +1,17 @@
 #include "quanlythemuon.h"
 
+quanly::quanly() {}
+
+quanly::~quanly() {
+    for (TheMuon* theMuon : list_the_muon) {
+        if (theMuon != nullptr)
+        {
+            delete theMuon;
+        }
+    }
+    list_the_muon.clear();
+}
+
 void quanly::them(){
     TheMuon* ptr;
     cout<<"Enter info for loan card : "<<endl;
@@ -41,4 +53,39 @@ void quanly::hienthi(){
                 list_the_muon.at(i)->display();
             }
         }
+}
+
+void quanly::them_map()
+{
+    cout << "Nhap thong tin the muon : " << endl;
+    unique_ptr<TheMuon>ptr(new TheMuon());
+    ptr->insert_map();
+    if (list_ma_map.count(ptr->getMaPhieuMuon()) == 0)
+    {
+        list_ma_map.insert(pair<int,unique_ptr<TheMuon>>(ptr->getMaPhieuMuon(), move(ptr))); // đây là insert map                                                                 //  ls_map.insert(list_ma_type::value_type(ptr->ma_phieu(),ptr));//syntax kieu typedef
+    }
+    else
+    {
+        cout << "=============== ma phieu da ton tai! =================" << endl;
+        cout << "Nhap lai thong tin the muon thu : " << endl;
+        ptr->insert_map();
+    }
+}
+void quanly::xoa_map()
+{
+    int ma;
+    cout << "Nhap vao ma phieu muon xoa: ";
+    cin >> ma;
+    list_ma_map.erase(ma);
+}
+void quanly::hienthimap()
+{
+    cout << "=========THONG TIN DANH SACH THE MUON========" << endl;
+    auto ret = list_ma_map.begin();
+    while (ret != list_ma_map.end())
+    {
+        ret->second->display();
+        ret++;
+    }
+    
 }

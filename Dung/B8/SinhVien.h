@@ -16,6 +16,7 @@ class SinhVien{
         virtual ~SinhVien();
         SinhVien(string ten,string lop,int tuoi);
         virtual void insert(set<int> &B);  
+        virtual void insert_map();
         virtual void display();
 };
 

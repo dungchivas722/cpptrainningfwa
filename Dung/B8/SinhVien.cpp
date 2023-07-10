@@ -11,6 +11,14 @@ void SinhVien::insert(set<int> &B){
     cout<<"Enter class: ";
     getline(cin>>ws,lop);
 }
+void SinhVien::insert_map(){
+    cout<<"Enter name: ";
+    getline(cin>>ws,ten);
+    cout<<"Enter age: ";
+    cin>>tuoi;
+    cout<<"Enter class: ";
+    getline(cin>>ws,lop);
+}
 void SinhVien::display(){
     cout<<"Name: "<<ten<<endl;
     cout<<"Age: "<<tuoi<<endl;
