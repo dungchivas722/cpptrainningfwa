@@ -13,7 +13,7 @@ int main() {
     string s;
     Text txt; 
     do {
-        cout << "========================TEXT_PROCESSING===================" << endl;
+        cout << "========================TEXT_PROCESSING======================" << endl;
         cout << "1. Enter text" << endl;               
         cout << "2. Count character A - a" << endl;
         cout << "3. Normalize the text" << endl;
@@ -21,7 +21,7 @@ int main() {
         cout << "Enter choice: ";
         cin >> choice; 
         cin.ignore();
-        cout << "==========================================================\n";
+        cout << "=============================================================\n";
 
         switch (choice) 
         {
@@ -35,15 +35,15 @@ int main() {
                 
             case COUNT: 
             {
-                txt.countCharA();
+                cout << txt.countCharA() << endl;
                 break;
             }
 
             case NORMALIZE:
             {
-                cout << "____Before____" << endl;
+                cout << "Before================================" << endl;
                 cout << txt.getText() << endl;
-                cout << "____After____" << endl;
+                cout << "After=================================" << endl;
                 txt.normalizeText();
                 break;
             }
@@ -58,7 +58,7 @@ int main() {
                 break;
         }
         cout << endl;
-        cout << "==========================================================" << endl;
+        cout << "=============================================================" << endl;
     } while (choice != EXIT);
 
     return 0; 

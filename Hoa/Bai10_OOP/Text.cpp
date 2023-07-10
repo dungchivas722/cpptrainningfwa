@@ -5,7 +5,7 @@ Text::Text(){};
 
 Text::Text(string txt) : txt(txt){};
 
- string Text ::getText() {
+string Text :: getText() {
     return txt;
  }
 void Text :: setText(string txt) {
@@ -40,4 +40,5 @@ void Text :: normalizeText() {
             i--;
         }
     }
+    cout << getText() << endl; 
 }
