@@ -8,11 +8,6 @@ Complex :: Complex()
 
 Complex :: Complex(double im, double re) : im(im), re(re) {}
 
-Complex :: Complex(const Complex &other)
-{
-    this->re = other.re;
-    this->im = other.im;
-}
 
 void Complex::inputComplex()
 {
