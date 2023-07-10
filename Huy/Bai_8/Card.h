@@ -3,12 +3,13 @@
 
 #include "Student.h"
 
-class Card : public Student
+class Card 
 {
     private:
     string cardId, bookId;
     int borrowDate,paymentDate;
     public:
+    Student student;
     void setCard();
     void getCard();
     string getCardId();

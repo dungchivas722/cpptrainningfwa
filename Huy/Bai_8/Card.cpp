@@ -2,7 +2,7 @@
 
 void Card::setCard()
 {
-    Student::setStudent();
+    student.setStudent();
     cout << "Nhap ID sach muon muon: ";
     cin >> bookId ;
 }
@@ -10,7 +10,7 @@ void Card::setCard()
 void Card:: getCard()
 {
     cout << "Sinh vien muon sach: \n";
-    Student::getStudent();
+    student.getStudent();
     cout <<"Ngay muon sach: " << borrowDate << "\t\t Ngay tra sach: " << paymentDate << "\n";
     cout << "ID sach: " << bookId << "\n";
     cout << "ID phieu muon: " << cardId << "\n";
