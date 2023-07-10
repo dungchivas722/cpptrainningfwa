@@ -26,15 +26,15 @@ void Complex :: showComplex()
 Complex Complex :: addTwoComplex(Complex a, Complex b)
 {
     Complex result;
-    this->re = a.re + b.re;
-    this->im = a.im + b.im;
+    result.re = a.re + b.re;
+    result.im = a.im + b.im;
     return result;
 }
 
 Complex Complex :: mulTwoComplex(Complex a, Complex b)
 {
     Complex result;
-    this->re = a.re * b.re - a.im * b.im;
-    this->im = a.re * b.im + a.im * b.re;
+    result.re = a.re * b.re - a.im * b.im;
+    result.im = a.re * b.im + a.im * b.re;
     return result;
 }
