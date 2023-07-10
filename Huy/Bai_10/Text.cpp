@@ -33,12 +33,15 @@ void Text :: countA()
 
 void Text :: textNormalization()
 {  
+    int count = 0;
     stringstream ss(st);
     vector<string> tmp;
     string a;
     while(ss>>a){
         tmp.push_back(a);
+        count++;
     }
+    cout << "So tu: " << count << endl;
     cout<<"Van ban sau khi chuan hoa:";
     for(auto x :tmp){
         cout<<x<<" ";
