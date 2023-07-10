@@ -57,19 +57,24 @@ void quanly::hienthi(){
 
 void quanly::them_map()
 {
+
     cout << "Nhap thong tin the muon : " << endl;
     unique_ptr<TheMuon>ptr(new TheMuon());
+    bool check = false;
+    do{
     ptr->insert_map();
-    if (list_ma_map.count(ptr->getMaPhieuMuon()) == 0)
-    {
-        list_ma_map.insert(pair<int,unique_ptr<TheMuon>>(ptr->getMaPhieuMuon(), move(ptr))); // đây là insert map                                                                 //  ls_map.insert(list_ma_type::value_type(ptr->ma_phieu(),ptr));//syntax kieu typedef
-    }
-    else
-    {
-        cout << "=============== ma phieu da ton tai! =================" << endl;
-        cout << "Nhap lai thong tin the muon thu : " << endl;
-        ptr->insert_map();
-    }
+        if (list_ma_map.count(ptr->getMaPhieuMuon()) == 0)
+        {
+            list_ma_map.insert(pair<int,unique_ptr<TheMuon>>(ptr->getMaPhieuMuon(), move(ptr))); // đây là insert map 
+            check = true;                                                              
+        }
+        else
+        {
+            cout << "=============== ma phieu da ton tai! =================" << endl;
+            cout << "Nhap lai thong tin the muon thu : " << endl;
+            
+        }
+    }while (check == false);
 }
 void quanly::xoa_map()
 {
