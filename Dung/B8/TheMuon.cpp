@@ -28,13 +28,13 @@ void TheMuon::insert_map() {
     SinhVien::insert_map();
     cout << "Enter loan coupon code: ";
     cin >> maphieumuon;
-        cin.ignore();
-        cout << "Enter book loan day: ";
-        getline(cin, ngaymuon);
-        cout << "Enter return day: ";
-        getline(cin, ngaytra);
-        cout << "Enter bookstore num: ";
-        getline(cin, sohieusach);
+    cin.ignore();
+    cout << "Enter book loan day: ";
+    getline(cin, ngaymuon);
+    cout << "Enter return day: ";
+    getline(cin, ngaytra);
+    cout << "Enter bookstore num: ";
+    getline(cin, sohieusach);
 }
 
 void TheMuon::display() {

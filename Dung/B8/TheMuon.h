@@ -7,6 +7,7 @@ class TheMuon : public SinhVien{
     private:
         int maphieumuon;
         string ngaymuon,ngaytra,sohieusach;
+        
     public:
         void insert_map() override;
         void insert(set <int> &A) override;
