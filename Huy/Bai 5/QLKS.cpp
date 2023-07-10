@@ -7,14 +7,14 @@ void QLKS::add_room()
     bool check_ID_card;
 
 		KhachSan tmp;
-        tmp.add_member();
+        tmp.nguoi.add_member();
         do {
         cout << "Nhap so CMND: ";
         cin >> ID_card;
 		check_ID_card = false;
 		for(int i = 0; i <list_rooms.size(); i++) 
 		{
-			if((list_rooms[i].GetID()) == ID_card)
+			if((list_rooms[i].nguoi.GetID()) == ID_card)
 			{
 				check_ID_card = true;
 				cout << "So CMND da ton tai. Moi nhap lai: \n";
@@ -23,7 +23,7 @@ void QLKS::add_room()
         }
 		}
 	    while (check_ID_card);
-		tmp.SetID(ID_card); 
+		tmp.nguoi.SetID(ID_card); 
 	cout << "So ngay thue: "; cin >> rental_day;
 
     bool check_kind_of_room;
@@ -93,7 +93,7 @@ void QLKS::delete_ID_card()
 
        for(int i = 0; i < list_rooms.size(); i++) 
     {
-		if(list_rooms[i].GetID() == ID_card)
+		if(list_rooms[i].nguoi.GetID() == ID_card)
 		{
            list_rooms.erase(list_rooms.begin() + i);	
            check_ID_card = false;
@@ -116,7 +116,7 @@ void QLKS::Rent_Room()
        check_ID_card = true;
        for(int i = 0; i < list_rooms.size(); i++) 
     {
-		if(list_rooms[i].GetID() == ID_card)
+		if(list_rooms[i].nguoi.GetID() == ID_card)
 		{
            list_rooms[i].GetRoom();	
            check_ID_card = false;

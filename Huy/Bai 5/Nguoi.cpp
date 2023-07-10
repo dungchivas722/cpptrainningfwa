@@ -7,9 +7,9 @@ void Nguoi::add_member()
 	cout << "Tuoi: "; cin >> age;
 }
 
-// void Nguoi::get_member() {
-// 	cout << name << "\t\t" << age << "\t" << ID_card;
-// }
+ void Nguoi::get_member() {
+ 	cout << name << "\t\t" << age << "\t" << ID_card;
+ }
 
 int Nguoi::GetID()
 {
