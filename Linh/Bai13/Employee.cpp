@@ -20,11 +20,15 @@ const char* fullNameException :: what() const throw()
     return "Invalid fullname!";
 }
 
+/* Syntax: dd/mm/yyyy */
+
 bool isValidBirthday(const string& birthday) 
 {
     regex birthdayPattern("^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[0-2])/\\d{4}$");
     return regex_match(birthday, birthdayPattern);
 }
+
+/* Syntax: abc@abc.xx -> xx: At least 2 characters */
 
 bool isValidEmail(const string& email) 
 {
@@ -37,6 +41,8 @@ bool isValidName(const string& fullname)
     return (fullname.length() > 0);
 }
 
+/* Exactly 10 digits */
+
 bool isValidPhoneNumber(const string& phone) 
 {
     regex phonePattern(R"(\d{10})");
@@ -48,6 +54,8 @@ Employee :: Employee(){}
 Employee :: Employee(string id, string fullname, string birthday, string phone, string email, int employee_type)
     : id(id), fullname(fullname), birthday(birthday), phone(phone), email(email), employee_type(employee_type){}
 
+/* Delete employee's certificate */
+
 Employee :: ~Employee()
 {
     certificates.clear();
@@ -55,14 +63,17 @@ Employee :: ~Employee()
 
 void Employee :: enterEmployee()
 {
+    /* Check valid name */
+
     do
     {
         cin.ignore();
         cout << "Enter fullname: ";
         getline(cin, fullname);
-        try 
+
+        try                                                 
         {
-            if (false == isValidName(fullname))
+            if (false == isValidName(fullname)) 
             {
                 throw fullNameException();
             }
@@ -74,7 +85,8 @@ void Employee :: enterEmployee()
     } 
     while (false == isValidName(fullname));
     
-    
+    /* Check valid date */
+
     do
     {
         cout << "Enter birthday (dd/mm/yyyy): ";
@@ -93,6 +105,8 @@ void Employee :: enterEmployee()
         }
     }
     while (false == isValidBirthday(birthday));
+
+    /* Check valid phone */
 
     do
     {
@@ -113,6 +127,8 @@ void Employee :: enterEmployee()
     } 
     while (false == isValidPhoneNumber(phone));
     
+    /* Check valid email */
+
     do
     {
         cout << "Enter email: ";

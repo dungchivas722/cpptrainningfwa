@@ -52,14 +52,15 @@ void Complex :: showComplex()
     cout << re << " + " << im << "i" << endl;
 }
 
-Complex Complex :: addTwoComplex(Complex a, Complex b)
+Complex* Complex :: addTwoComplex(Complex a, Complex b)
 {
     this->re = a.re + b.re;
     this->im = a.im + b.im;
 }
 
-Complex Complex :: mulTwoComplex(Complex a, Complex b)
+Complex* Complex :: mulTwoComplex(Complex a, Complex b)
 {
     this->re = a.re * b.re - a.im * b.im;
     this->im = a.re * b.im + a.im * b.re;
+    // return this;
 }

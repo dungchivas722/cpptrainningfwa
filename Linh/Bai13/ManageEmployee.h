@@ -7,6 +7,9 @@
 #include "Experience.h"
 
 #include <vector>
+#include <memory>
+
+/* Type of employee */
 
 enum empl_type
 {
@@ -18,7 +21,9 @@ enum empl_type
 class ManageEmployee
 {
     private:
-        vector <Employee*> employeeList;
+        // vector <Employee*> employeeList;
+        vector <shared_ptr <Employee>> employeeList; /* List of employees */
+
     public:
         ManageEmployee();
         ~ManageEmployee();

@@ -117,6 +117,8 @@ int main()
 // g++ .\Certificate.o .\Employee.o .\Intern.o .\Fresher.o .\Experience.o .\ManageEmployee.o .\main.o -o run
 // .\run.exe
 
+// g++ *.cpp -o run; .\run.exe
+
 // 1
 // 2
 // 1

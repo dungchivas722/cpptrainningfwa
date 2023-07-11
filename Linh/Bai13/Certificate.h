@@ -8,7 +8,7 @@ using namespace std;
 class Certificate 
 {
     private:
-        string cerID;
+        string cerID;       /* ID, Name, Rank, Date of Certificate */
         string cerName;
         string cerRank;
         string cerDate;
@@ -18,6 +18,9 @@ class Certificate
         Certificate(string cerID, string cerName, string cerRank, string cerDate);
         ~Certificate();
 
+        /* 
+            Enter and show Certificate
+         */
         void enterCertificate();
         void showCertificate();
 };

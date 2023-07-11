@@ -24,8 +24,8 @@ class Complex
 
         void enterComplex();
         void showComplex();
-        Complex addTwoComplex(Complex a, Complex b);
-        Complex mulTwoComplex(Complex a, Complex b);
+        Complex* addTwoComplex(Complex a, Complex b);
+        Complex* mulTwoComplex(Complex a, Complex b);
 };
 
 #endif /* COMPLEX_H */

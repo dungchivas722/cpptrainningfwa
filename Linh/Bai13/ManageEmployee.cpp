@@ -4,27 +4,31 @@ ManageEmployee :: ManageEmployee(){}
 
 ManageEmployee :: ~ManageEmployee()
 {
-    for (Employee *x : employeeList)
-    {
-        if (NULL != x)
-        {
-            delete(x);
-        }
-    }
-    employeeList.clear();
+    // for (Employee *x : employeeList)
+    // {
+    //     if (NULL != x)
+    //     {
+    //         delete(x);
+    //     }
+    // }
+    // employeeList.clear();
 }
+
+/* Check for existence of id */
 
 bool ManageEmployee :: checkID(string id)
 {
     bool found = false;
-    for (Employee *x : employeeList)
+    // for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {   
-        if (x->getID() == id)
+        if ((NULL != employee) && (employee->getID() == id)) /* Check x NULL */
         {
             found = true;
             break;
         }
     }
+
     return found;
 }
 
@@ -44,6 +48,8 @@ void ManageEmployee :: addEmployee()
         {
             case INTERN: 
             {
+                /* Enter and check ID */
+
                 cout << endl;
                 cout << "Enter ID: ";
                 cin >> id;
@@ -53,7 +59,11 @@ void ManageEmployee :: addEmployee()
                     break;
                 }
                 
-                Intern* tmpIntern = new Intern();
+                // Employee* tmpIntern = new Intern();
+                shared_ptr <Employee> tmpIntern = make_shared <Intern> ();
+
+                /* Set ID, type of employee and enter employee's information */
+
                 tmpIntern->setID(id);
                 tmpIntern->setEmployeeType(INTERN);
                 tmpIntern->enterEmployee();
@@ -64,6 +74,8 @@ void ManageEmployee :: addEmployee()
 
             case FRESHER: 
             {
+                /* Check ID */
+
                 cout << "Enter ID: ";
                 cin >> id;
                 if (true == checkID(id))
@@ -72,7 +84,11 @@ void ManageEmployee :: addEmployee()
                     break;
                 }
 
-                Fresher* tmpFresher = new Fresher();
+                // Employee* tmpFresher = new Fresher();
+                shared_ptr <Employee> tmpFresher = make_shared <Fresher> ();
+
+                /* Set ID, type of employee and enter employee's information */
+
                 tmpFresher->setID(id);
                 tmpFresher->setEmployeeType(FRESHER);
                 tmpFresher->enterEmployee();
@@ -83,6 +99,8 @@ void ManageEmployee :: addEmployee()
 
             case EXPERIENCE: 
             {
+                /* Check ID */
+
                 cout << "Enter ID: ";
                 cin >> id;
                 if (true == checkID(id))
@@ -91,7 +109,11 @@ void ManageEmployee :: addEmployee()
                     break;
                 }
 
-                Experience* tmpExperience = new Experience();
+                // Employee* tmpExperience = new Experience();
+                shared_ptr <Employee> tmpExperience = make_shared <Experience> ();
+
+                /* Set ID, type of employee and enter employee's information */
+
                 tmpExperience->setID(id);
                 tmpExperience->setEmployeeType(EXPERIENCE);
                 tmpExperience->enterEmployee();
@@ -101,7 +123,7 @@ void ManageEmployee :: addEmployee()
             }
 
             default:
-                std::cout << "Your choice is not valid!" << std::endl;
+                cout << "Your choice is not valid!" << endl;
                 break;
         }
     } 
@@ -115,13 +137,13 @@ void ManageEmployee :: changeEmployee()
     cin >> id;
 
     bool found = false;
-    for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {   
-        if (x->getID() == id)
-        {
+        if ((NULL != employee) && (employee->getID() == id))    /* If ID exists -> Delete Cetificate */
+        {                                                       /* Enter employee's information */
             found = true;
-            x->deleteCertificate();
-            x->enterEmployee();
+            employee->deleteCertificate();
+            employee->enterEmployee();
             cout << "_____________________________" << endl;
             break;
         }
@@ -144,10 +166,10 @@ void ManageEmployee :: deleteEmployee()
 
     for (auto it = employeeList.begin(); it != employeeList.end();)
     {   
-        if ((*it)->getID() == id)
-        {
+        if ((NULL != (*it)) && (*it)->getID() == id)            /* If ID exists -> Delete employee */
+        {                                                       
             found = true;
-            delete(*it);
+            // delete(*it);
             it = employeeList.erase(it);
             cout << "_____________________________" << endl;
             break;
@@ -170,11 +192,11 @@ void ManageEmployee :: showList()
     int i = 1;
     cout << endl;
     cout << "There are " << employeeList.size() << " employee!" <<endl;
-    for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {
         cout << endl;
         cout << "Employee " << i++ << "!" << endl;
-        x->showEmployee();
+        employee->showEmployee();
         // x->getEmployeeCount();
         cout << endl;
     }
@@ -183,13 +205,13 @@ void ManageEmployee :: showList()
 void ManageEmployee :: findIntern()
 {
     int count = 0;
-    for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {
-        if (INTERN == x->getEmployeeType())
+        if ((NULL != employee) && (INTERN == employee->getEmployeeType()))
         {
             cout << endl;
             cout << "Employee " << ++count << "!" << endl;
-            x->showEmployee();
+            employee->showEmployee();
             cout << endl;
             // count++;
         }
@@ -204,13 +226,13 @@ void ManageEmployee :: findIntern()
 void ManageEmployee :: findFresher()
 {
     int count = 0;
-    for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {
-        if (FRESHER == x->getEmployeeType())
+        if ((NULL != employee) && (FRESHER == employee->getEmployeeType()))
         {
             cout << endl;
             cout << "Employee " << ++count << "!" << endl;
-            x->showEmployee();
+            employee->showEmployee();
             cout << endl;
             // count++;
         }
@@ -225,13 +247,13 @@ void ManageEmployee :: findFresher()
 void ManageEmployee :: findExperience()
 {
     int count = 0;
-    for (Employee *x : employeeList)
+    for (const auto &employee : employeeList)
     {
-        if (EXPERIENCE == x->getEmployeeType())
+        if ((NULL != employee) && (EXPERIENCE == employee->getEmployeeType()))
         {
             cout << endl;
             cout << "Employee " << ++count << "!" << endl;
-            x->showEmployee();
+            employee->showEmployee();
             cout << endl;
             // count++;
         }
