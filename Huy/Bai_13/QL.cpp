@@ -14,7 +14,7 @@ bool ManageEmployee :: checkID(string id)
     bool found = false;
     for (const auto &employee : employeeList)
     {   
-        if ((employee->getID() == id))
+        if ((NULL != employee)&&(employee->getID() == id))
         {
             found = true;
             break;
@@ -126,7 +126,7 @@ void ManageEmployee :: changeEmployee()
     bool found = false;
     for (const auto &employee : employeeList)
     {   
-        if ((employee->getID() == id)) 
+        if ((NULL != employee)&&(employee->getID() == id)) 
         {                                                       
             found = true;
             employee->deleteCertificate();
