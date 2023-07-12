@@ -1,6 +1,11 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
+#include <iostream>
+#include <string.h>
+#include <vector>
+#include <regex>
+
 #include "Certificate.h"
 
 using namespace std;

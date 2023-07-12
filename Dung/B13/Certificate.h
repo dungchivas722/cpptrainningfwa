@@ -1,10 +1,9 @@
-#ifndef CERTIFICATE_H
-#define CERTIFICATE_H
+#ifndef __Certificate
+#define __Certificate
 
 #include <iostream>
-#include <string.h>
-#include <vector>
-#include <regex>
+#include <string>
+
 using namespace std;
 
 class Certificate{
