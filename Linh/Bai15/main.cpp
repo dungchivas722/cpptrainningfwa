@@ -22,9 +22,9 @@ int main()
     int choice;
     do {
         cout << "-------- MENU --------" << endl;
-        cout << "1.  Add a employee" << endl;
-        cout << "2.  Delete a employee" << endl;
-        cout << "3.  Show employee list" << endl;
+        cout << "1.  Add a student" << endl;
+        cout << "2.  Delete a student" << endl;
+        cout << "3.  Show student list" << endl;
         cout << "4.  Number of regular students" << endl;
         cout << "5.  Highest entrance student" << endl;
         cout << "6.  Inservice student list" << endl;
@@ -43,7 +43,7 @@ int main()
             case ADD:
             {
                 cout << "------------ENTER------------" << endl;;
-                cout << "Enter a employee" << endl;
+                cout << "Enter a student" << endl;
                 dep.addStudent();
                 break;
             }
@@ -51,7 +51,7 @@ int main()
             case DEL:
             {
                 cout << "------------DELETE------------" << endl;
-                cout << "Delete a employee" << endl;
+                cout << "Delete a student" << endl;
                 dep.deleteStudent();
                 break;
             }
