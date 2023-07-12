@@ -100,6 +100,8 @@ void Department :: deleteStudent()
         {                                                       
             found = true;
             it = studentList.erase(it);
+            cout << endl;
+            cout << "---------DELETED----------" << endl;
             cout << "_____________________________" << endl;
             break;
         }
@@ -202,7 +204,9 @@ void Department :: lastest_8List()
     {
         if ((nullptr != stu) && (stu->gpaLastest() >= GOOD))
         {
+            cout << endl;
             stu->showStudent();
+            cout << endl;
         }
     }
 }

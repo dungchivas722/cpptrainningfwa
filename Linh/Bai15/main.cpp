@@ -28,13 +28,13 @@ int main()
         cout << "4.  Number of regular students" << endl;
         cout << "5.  Highest entrance student" << endl;
         cout << "6.  Inservice student list" << endl;
-        cout << "7.  GPA above 3.2 list" << endl;
+        cout << "7.  GPA above 8.0 list" << endl;
         cout << "8.  Highest GPA student" << endl;
         cout << "9.  Arrange student list" << endl;
         cout << "10. Number of students by year of admission" << endl;
         cout << "0.  Escape" << endl;
         cout << "-----------------------" << endl;
-        cout << "Enter your option (0 - 8): ";
+        cout << "Enter your option (0 - 10): ";
         cin >> choice;
         cin.ignore();
 
@@ -42,7 +42,7 @@ int main()
         {
             case ADD:
             {
-                cout << "------------ENTER------------" << endl;;
+                cout << "------------ENTER------------" << endl;
                 cout << "Enter a student" << endl;
                 dep.addStudent();
                 break;
@@ -154,13 +154,13 @@ int main()
 // 25
 // 1
 // 2022
-// 3.3
+// 7.0
 // 1
 // 2021
-// 1.5
+// 7.5
 // 1
 // 2023
-// 3.5
+// 8.5
 // 0
 // 1
 // 2
@@ -172,13 +172,13 @@ int main()
 // ND
 // 1
 // 2022
-// 3.1
+// 8.2
 // 1
 // 2021
-// 2.5
+// 7.9
 // 1
 // 2023
-// 2.7
+// 9.0
 // 0
 // 1
 // 2
@@ -190,13 +190,13 @@ int main()
 // HN
 // 1
 // 2022
-// 2.7
+// 6.0
 // 1
 // 2021
-// 2.7
+// 6.5
 // 1
 // 2023
-// 2.8
+// 8.0
 // 0
 // 1
 // 1
@@ -207,11 +207,25 @@ int main()
 // 27
 // 1
 // 2022
-// 1.9
+// 7.5
 // 1
 // 2023
-// 2.5
+// 7.8
 // 1
 // 2021
-// 3.3
+// 8.0
+// 0
+// 1
+// 1
+// 5
+// Tu
+// 20/12/1999
+// 2017
+// 28
+// 1
+// 2021
+// 7.8
+// 1
+// 2021
+// 8.0
 // 0

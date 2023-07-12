@@ -6,7 +6,7 @@
 #include <memory>
 #include <map>
 
-#define GOOD 3.2
+#define GOOD 8.0
 
 class Department
 {
