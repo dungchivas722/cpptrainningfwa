@@ -1,5 +1,28 @@
 #include "Student.h"
 
+const char* birthdayException :: what() const throw() 
+{
+    return "Invalid birthday!";
+}
+
+const char* nameException :: what() const throw() 
+{
+    return "Invalid fullname!";
+}
+
+/* Syntax: dd/mm/yyyy */
+
+bool isValidBirthday(const string& birthday) 
+{
+    regex birthdayPattern("^(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[0-2])/\\d{4}$");
+    return regex_match(birthday, birthdayPattern);
+}
+
+bool isValidName(const string& fullname) 
+{
+    return (fullname.length() > 0);
+}
+
 Student :: Student(){}
 
 Student :: Student(string id, string name, string birthDate, int admissionYear, float entranceScore)
@@ -20,41 +43,120 @@ float Student :: getEntranceScore()
     return this->entranceScore;
 }
 
-void Student :: addResult(const Result& result) 
+void Student :: setID(string id)
 {
-    results.push_back(result);
+    this->id = id;
 }
 
-// float Student :: calculateGPA(const string& semester)
-// {
-//     float totalCredits = 0;
-//     float totalScore = 0;
+string Student :: getID()
+{
+    return this->id;
+}
 
-//     for (const Result& result : results) {
-//         if (result.getSemester() == semester) {
-//             totalScore += result.getGPA();
-//             totalCredits++;
-//         }
-//     }
+int Student :: getAdmissionYear()
+{
+    return this->admissionYear;
+}
 
-//     if (totalCredits > 0) {
-//         return totalScore / totalCredits;
-//     }
+void Student :: addResult() 
+{
+    Result tmpRes;
+    int choice;
+    do
+    {
+        cout << "Enter result!" << endl;
+        cout << "1. Enter data" << endl;
+        cout << "0. Escape" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-//     return 0;
-// }
+        switch (choice)
+        {
+            case ENT:
+            {
+                tmpRes.enterResult();
+                results.insert(tmpRes);
+                break;
+            }              
+            
+            case ESC:
+            {
+                cout << "End of enter result" << endl;
+                break;
+            }
+
+            default:
+            {
+                cout << "Your choice is not valid";
+                break;
+            }
+        }
+    } 
+    while (ESC != choice);
+}
+
+void Student :: showResult()
+{
+    for (Result res : results)
+    {
+        cout << endl;
+        res.showResult();
+    }
+}
+
+void Student :: deleteResult()
+{
+    results.clear();
+}
 
 void Student :: enterStudent() 
 {
-    cout << "Enter student ID: ";
-    cin >> id;
-    cout << "Enter full name: ";
-    cin.ignore();
-    getline(cin, name);
-    cout << "Enter birth date: ";
-    cin >> birthDate;
+    /* Check valid name */
+
+    do
+    {
+        cin.ignore();
+        cout << "Enter fullname: ";
+        getline(cin, name);
+
+        try                                                 
+        {
+            if (false == isValidName(name)) 
+            {
+                throw nameException();
+            }
+        } 
+        catch (const nameException& ex) 
+        {
+            cout << "Caught Exception: " << ex.what() << endl;
+        }
+    } 
+    while (false == isValidName(name));
+
+    /* Check valid date */
+
+    do
+    {
+        cout << "Enter birthday (dd/mm/yyyy): ";
+        cin >> birthDate;
+
+        try 
+        {
+            if (false == isValidBirthday(birthDate))
+            {
+                throw birthdayException();
+            }
+        } 
+        catch (const birthdayException& ex) 
+        {
+            cout << "Caught Exception: " << ex.what() << endl;
+        }
+    }
+    while (false == isValidBirthday(birthDate));
+
     cout << "Enter admission year: ";
     cin >> admissionYear;
+
     cout << "Enter entrance score: ";
     cin >> entranceScore;
 }
@@ -66,9 +168,59 @@ void Student :: showStudent()
     cout << "Birth Date: " << birthDate << endl;
     cout << "Admission Year: " << admissionYear << endl;
     cout << "Entrance Score: " << entranceScore << endl;
-    cout << "Results: " << endl;
+    if (0 != results.size())
+    {
+        cout << "Results: " << endl;
+    }
+    
     for (Result result : results) 
     {
         result.showResult();
     }
+}
+
+float Student::gpaLastest() 
+{
+    if (false == results.empty()) 
+    {
+        return (*(--results.end())).getGPA();
+    } 
+    else 
+    {
+        return 0.0;
+    }
+}
+
+float Student :: gpaMax()
+{
+    float tmpGpa = 0;
+    for (const Result &res : results)
+    {
+        if (res.getGPA() > tmpGpa)
+        {
+            tmpGpa = res.getGPA();
+        }
+    }
+    return tmpGpa;
+}
+
+// static bool Student :: compareType(const Student& s1, const Student& s2) 
+// {
+//     return isRegular();
+// }
+
+// static bool Student :: compareAdmissionYear(const Student& s1, const Student& s2) 
+// {
+//     return s1.getAdmissionYear() > s2.getAdmissionYear();
+// }
+
+
+bool compareAdmissionYear :: operator()(const shared_ptr<Student>& s1, const shared_ptr<Student>& s2) const 
+{
+    return (s1->getAdmissionYear() < s2->getAdmissionYear());
+}
+
+bool compareType :: operator()(const shared_ptr<Student>& s1, const shared_ptr<Student>& s2) const 
+{
+    return (s1->isRegular() < s2->isRegular());
 }

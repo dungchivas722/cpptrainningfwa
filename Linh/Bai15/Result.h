@@ -2,7 +2,7 @@
 #define RESULT_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
@@ -16,11 +16,17 @@ class Result
         Result();
         Result(string semester, float gpa);
         ~Result();
-        string getSemester();
-        float getGPA();
+        string getSemester() const;
+        float getGPA() const;
 
         void enterResult();
         void showResult();
+};
+
+class semesterComparator
+{
+    public:
+        bool operator()(const Result& result1, const Result& result2) const;
 };
 
 #endif /* RESULT_H */
