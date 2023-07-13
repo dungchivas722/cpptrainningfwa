@@ -22,11 +22,22 @@ Controller::~Controller(){
 void Controller::runMenu(){
     
     // In ra menu
+    cout << "\n\n\n";
+    this -> view.printTest();
+    cout << "\n\n";
+
     string path = this->model.getPath();
-    this->view.printMenu();
+    if (path == "exit"){
+        return;
+    }
+    else if (path == "default") {
+        path = "/Users/user/Desktop/";
+        cout << "Đường dẫn là:" << path << endl;
+    }
     int choice;
     
     do {
+        this->view.printMenu();
         cout << "Nhap lua chon: ";
         cin >> choice;
         switch (choice)

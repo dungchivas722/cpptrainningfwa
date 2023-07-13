@@ -24,6 +24,7 @@ public:
 
     // in ra thong bao file, playlist
     // update sau
+    void printTest();
 
 };
 

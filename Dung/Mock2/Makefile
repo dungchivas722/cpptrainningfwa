@@ -45,7 +45,7 @@ EXECUTABLE_NAME = mainRelease
 endif
 
 ## bien dich ##
-CXX_COMPILER_CALL = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(VIEW_CPPFLAGS) $(MODEL_CPPFLAGS) $(CONTROLLER_CPPFLAGS) 
+CXX_COMPILER_CALL = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(MODEL_CPPFLAGS) $(CONTROLLER_CPPFLAGS) $(VIEW_CPPFLAGS)
 
 ## duong dan con ##
 MODEL_SOURCES = $(wildcard $(SOURCE_DIR)/$(MODEL_DIR)/*.cpp)
@@ -57,24 +57,23 @@ VIEW_OBJECTS = $(patsubst $(SOURCE_DIR)/$(VIEW_DIR)/%.cpp, $(BUILD_DIR)/$(VIEW_D
 CONTROLLER_OBJECTS = $(patsubst $(SOURCE_DIR)/$(CONTROLLER_DIR)/%.cpp, $(BUILD_DIR)/$(CONTROLLER_DIR)/%.o, $(CONTROLLER_SOURCES))
 
 ## muc tieu  ##
-all: create build execute
+all: create build execute clean
 create:
-	@echo "Creating..."
+	@echo "Dang tao..."
 	@mkdir -p $(BUILD_DIR)/$(MODEL_DIR)
 	@mkdir -p $(BUILD_DIR)/$(VIEW_DIR)
 	@mkdir -p $(BUILD_DIR)/$(CONTROLLER_DIR)
-	@echo "Created!"
+	@echo "Da tao xong!"
 
 build: $(VIEW_OBJECTS) $(MODEL_OBJECTS) $(CONTROLLER_OBJECTS)
-	@echo "Building..."
+	@echo "Dang build..."
 	$(CXX_COMPILER_CALL) $(SOURCE_DIR)/main.cpp $(VIEW_OBJECTS) $(MODEL_OBJECTS) $(CONTROLLER_OBJECTS) $(LDFLAGS) $(LDLIBS) -o $(BUILD_DIR)/$(EXECUTABLE_NAME)
-	@echo "Builded!"
+	@echo " Da build xong!"
 execute:
-	@clear
-	@echo "Đang chạy file ..."
+	@echo "Dang chay file ..."
 	./$(BUILD_DIR)/$(EXECUTABLE_NAME)
-	@clear
-	@echo "Đã chạy xong!"
+	# @clear
+	@echo "Da chay xong ! va clear screen"
 clean:
 	rm -f $(BUILD_DIR)/$(MODEL_DIR)/*.o
 	rm -f $(BUILD_DIR)/$(VIEW_DIR)/*.o
@@ -82,7 +81,7 @@ clean:
 	rm -f $(BUILD_DIR)/$(EXECUTABLE_NAME)
 	rm -r $(BUILD_DIR)
 	@clear
-	@echo "Đã xóa xong!"
+	@echo "Đã xoa xong! va clear screen"
 	
 
 ## duong dan cha ##

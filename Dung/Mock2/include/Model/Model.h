@@ -4,9 +4,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <fstream>
-#include <taglib/tag.h>
-#include <taglib/fileref.h>
 using namespace std;
 
 class Playlist
