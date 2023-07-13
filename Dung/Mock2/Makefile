@@ -57,26 +57,33 @@ VIEW_OBJECTS = $(patsubst $(SOURCE_DIR)/$(VIEW_DIR)/%.cpp, $(BUILD_DIR)/$(VIEW_D
 CONTROLLER_OBJECTS = $(patsubst $(SOURCE_DIR)/$(CONTROLLER_DIR)/%.cpp, $(BUILD_DIR)/$(CONTROLLER_DIR)/%.o, $(CONTROLLER_SOURCES))
 
 ## muc tieu  ##
-all: create build
-
+all: create build execute
 create:
+	@echo "Creating..."
 	@mkdir -p $(BUILD_DIR)/$(MODEL_DIR)
 	@mkdir -p $(BUILD_DIR)/$(VIEW_DIR)
 	@mkdir -p $(BUILD_DIR)/$(CONTROLLER_DIR)
+	@echo "Created!"
 
 build: $(VIEW_OBJECTS) $(MODEL_OBJECTS) $(CONTROLLER_OBJECTS)
+	@echo "Building..."
 	$(CXX_COMPILER_CALL) $(SOURCE_DIR)/main.cpp $(VIEW_OBJECTS) $(MODEL_OBJECTS) $(CONTROLLER_OBJECTS) $(LDFLAGS) $(LDLIBS) -o $(BUILD_DIR)/$(EXECUTABLE_NAME)
-# $(CXX_COMPILER_CALL) $(MODEL_OBJECTS) $(VIEW_OBJECTS) $(CONTROLLER_OBJECTS) $(LDFLAGS) -o $(BUILD_DIR)/$(EXECUTABLE_NAME)
-
+	@echo "Builded!"
 execute:
+	@clear
+	@echo "Đang chạy file ..."
 	./$(BUILD_DIR)/$(EXECUTABLE_NAME)
-
+	@clear
+	@echo "Đã chạy xong!"
 clean:
 	rm -f $(BUILD_DIR)/$(MODEL_DIR)/*.o
 	rm -f $(BUILD_DIR)/$(VIEW_DIR)/*.o
 	rm -f $(BUILD_DIR)/$(CONTROLLER_DIR)/*.o
 	rm -f $(BUILD_DIR)/$(EXECUTABLE_NAME)
 	rm -r $(BUILD_DIR)
+	@clear
+	@echo "Đã xóa xong!"
+	
 
 ## duong dan cha ##
 $(BUILD_DIR)/$(MODEL_DIR)/%.o: $(SOURCE_DIR)/$(MODEL_DIR)/%.cpp

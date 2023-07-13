@@ -1,4 +1,6 @@
 #include "Model.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 Playlist::Playlist(){
 }
@@ -90,16 +92,17 @@ void Model::fixMetadataMediaPlaylist(string name, string media){
     // update sau
 }
 
-vector <string> Model::getListMedia(string path){
-    vector <string> listMedia;
-    ifstream file;
-    file.open(path);
-    string line;
-    while (getline(file, line)){
-        listMedia.push_back(line);
+vector<string> Model::getListMedia(string directoryPath) {
+    vector<string> fileList;
+
+    for (const auto& entry : fs::directory_iterator(directoryPath)) {
+        if (entry.is_regular_file()) {
+            const string& filePath = entry.path().filename().string();
+            fileList.push_back(filePath);
+        }
     }
-    file.close();
-    return listMedia;
+
+    return fileList;
 }
 
 vector<Playlist> Model::getListNamePlaylist(){

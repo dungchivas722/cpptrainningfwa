@@ -27,6 +27,7 @@ void Controller::runMenu(){
     int choice;
     
     do {
+        cout << "Nhap lua chon: ";
         cin >> choice;
         switch (choice)
         {
