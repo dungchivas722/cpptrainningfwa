@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CARD_H
+#define CARD_H
 #include "Student.h"
 
 class Card : public Student {
@@ -24,3 +25,4 @@ class Card : public Student {
         ~Card();
 };
 
+#endif

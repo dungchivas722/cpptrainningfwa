@@ -7,12 +7,13 @@
 using namespace std; 
 class Town {
     private:    
-        int num_Family1;
+        int num_Family;
     public: 
-        vector <Family1> listFamilies;
+        Town();
+        vector <Family> listFamilies;
         set <int> tmp_id_card;
-        void getFamily1();
-        void addFamily1();
+        void getFamily();
+        void addFamily();
         ~Town();
 };
 

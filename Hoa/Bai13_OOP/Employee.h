@@ -20,25 +20,25 @@ enum choice     /* Choice for add Certificate */
     Birthday, email, phone, name Exception
  */
 
-class birthdayException : public exception 
+class BirthdayException : public exception 
 {
     public:
         virtual const char* what() const throw();
 };
 
-class emailException : public exception 
+class EmailException : public exception 
 {
     public:
         virtual const char* what() const throw();
 };
 
-class phoneException : public exception 
+class PhoneException : public exception 
 {
     public:
         virtual const char* what() const throw();
 };
 
-class fullNameException : public exception 
+class FullNameException : public exception 
 {
     public:
         virtual const char* what() const throw();
@@ -48,10 +48,10 @@ class fullNameException : public exception
     Check Date, Email, Name, Phone is valid or not valid
  */
 
-bool isValidDate(const string& birthday);
-bool isValidEmail(const string& email);
-bool isValidName(const string& fullname);
-bool isValidPhoneNumber(const string& phone);
+bool CheckValidDate(const string& birthday);
+bool CheckValidEmail(const string& email);
+bool CheckValidName(const string& fullname);
+bool CheckValidPhoneNumber(const string& phone);
 
 class Employee
 {
@@ -81,14 +81,16 @@ class Employee
         void setEmployeeCount(int employee_count);
         int getEmployeeCount();
 
-        /* Set, get ID, type of employee, number of employees */
+        /* Enter, show employee */
 
-        void setID(string id);
-        string getID();
-        void setEmployeeType(int employee_type);
-        int getEmployeeType();
-        void setEmployeeCount(int employee_count);
-        int getEmployeeCount();
+        virtual void enterEmployee();
+        virtual void showEmployee() = 0;
+
+        /* Add, delete, show certificates of employee */
+
+        void addCertificate();
+        void showCertificate();
+        void deleteCertificate();
 };
 
 #endif /* EMPLOYEE_H */

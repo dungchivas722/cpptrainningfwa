@@ -2,7 +2,7 @@
 #include "CongNhan.h"
 #include "KySu.h"
 #include "NhanVien.h"
-
+#include <string>
 void QLCB::addOfficer() {
     int choice;
     cout << "1. Add a worker" << endl;

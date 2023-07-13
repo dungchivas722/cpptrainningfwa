@@ -21,8 +21,8 @@ class Complex_Number {
 
         void enterComplex();
         void resultComplex();
-        Complex_Number addTwoComplexNumber(Complex_Number a, Complex_Number b);
-        Complex_Number mulTwoComplexNumber(Complex_Number a, Complex_Number b);
+        Complex_Number* addTwoComplexNumber(Complex_Number a, Complex_Number b);
+        Complex_Number* mulTwoComplexNumber(Complex_Number a, Complex_Number b);
 };
 
 #endif 

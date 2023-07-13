@@ -1,7 +1,5 @@
-#include "Person.h"
-#include "Person.cpp"
 #include "Hotel.h"
-#include "Hotel.cpp"
+
 #define ADD 1
 #define DELETE 2 
 #define PAY 3

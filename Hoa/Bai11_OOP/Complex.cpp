@@ -52,15 +52,17 @@ void Complex_Number :: resultComplex()
     cout << real << " + " << imaginary << "i" << endl;
 }
 
-Complex_Number Complex_Number :: addTwoComplexNumber(Complex_Number a, Complex_Number b)
+Complex_Number* Complex_Number :: addTwoComplexNumber(Complex_Number a, Complex_Number b)
 {
-    this->real = a.real + b.real;
-    this->real = a.real + b.real;
-    this->imaginary = a.imaginary + b.imaginary;
+    Complex_Number* dung;
+    dung->real = a.real + b.real;
+    dung->imaginary = a.imaginary + b.imaginary;
+    return dung;
 }
 
-Complex_Number Complex_Number :: mulTwoComplexNumber(Complex_Number a, Complex_Number b)
+Complex_Number* Complex_Number :: mulTwoComplexNumber(Complex_Number a, Complex_Number b)
 {
     this->real = a.real * b.real - a.imaginary * b.imaginary;
     this->imaginary = a.real * b.imaginary + a.imaginary * b.real;
+    return this;
 }

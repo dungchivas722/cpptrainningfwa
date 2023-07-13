@@ -1,7 +1,9 @@
-#pragma once
+
 #include "Student.h"
 
 Student :: Student(){}
+
+Student :: ~Student(){}
 
 Student :: Student (string name, int age, string class_student) {
     this -> name = name; 

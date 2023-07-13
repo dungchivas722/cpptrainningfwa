@@ -1,4 +1,6 @@
-#pragma once 
+#ifndef HOTEL_H
+#define HOTEL_H
+
 #include <iostream>
 #include "Person.h"
 #include <vector>
@@ -16,3 +18,5 @@ class Hotel {
         void calculate_Payment();
         void exitProgram();
 };
+
+#endif

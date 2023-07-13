@@ -1,5 +1,5 @@
 #include "Hotel.h"
-#pragma once
+
 #include <iostream>
 #include <string>
 #include <vector>

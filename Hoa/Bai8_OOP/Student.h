@@ -1,4 +1,6 @@
-#pragma once
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <iostream>
 
 using namespace std; 
@@ -19,5 +21,7 @@ class Student {
         void setAge (int age);
         void setClass_student (string class_student);
 
-        virtual ~Student();
+        ~Student();
 };
+
+#endif

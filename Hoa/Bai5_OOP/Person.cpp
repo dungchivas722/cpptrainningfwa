@@ -1,5 +1,4 @@
 #include "Person.h"
-#pragma once 
 
 Person :: Person() {}
 
