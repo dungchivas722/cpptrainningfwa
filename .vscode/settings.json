@@ -63,7 +63,13 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "algorithm": "cpp",
-        "thread": "cpp",
-        "map": "cpp"
-    }
+        "thread": "cpp"
+        // "map": "cpp",
+        // "deque": "cpp",
+        // "fstream": "cpp",
+        // "list": "cpp",
+        // "regex": "cpp",
+        // "stack": "cpp"
+    },
+    // "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }
