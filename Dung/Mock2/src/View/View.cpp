@@ -7,14 +7,13 @@
 #include <taglib/fileref.h>
 #include <iostream>
 #include <string>
-
 View::View() {
 }
 
 View::~View() {
 }
-
-void View::printTest() {
+void View::printTest()
+{
     int choice;
     std::cout << "------------------TEST------------------" << std::endl;
     std::string filePath = "/Users/user/Desktop/nhac.mp3";
@@ -36,10 +35,13 @@ void View::printTest() {
     std::cout << "year: " << year << std::endl;
     std::cout << "Nhap lua chon nghe bai hat: " << std::endl;
     std::cin >> choice;
-    if (choice == 1) {
+    if (choice == 1)
+    {
         std::cout << "Bat dau nghe bai hat" << std::endl;
-        // them portaudio vao day
-    } else {
+        
+    }
+    else
+    {
         std::cout << "Thoat" << std::endl;
     }
 

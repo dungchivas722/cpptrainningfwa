@@ -9,8 +9,6 @@ using namespace std;
 
 class View
 {  
-private:
-    vector <Playlist> listPlaylist;
 public:
     View();
     ~View();

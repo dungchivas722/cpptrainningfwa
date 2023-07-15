@@ -13,7 +13,6 @@ enum Menu{
     FIX_METADATA_MEDIA_PLAYLIST = 9
 };
 
-
 Controller::Controller() {}
 
 Controller::~Controller(){

@@ -33,7 +33,7 @@ VIEW_CPPFLAGS = -I $(INCLUDE_DIR)/$(VIEW_DIR)
 CONTROLLER_CPPFLAGS = -I $(INCLUDE_DIR)/$(CONTROLLER_DIR)
 MODEL_CPPFLAGS = -I $(INCLUDE_DIR)/$(MODEL_DIR)
 LDFLAGS = -L./$(LID_DIR)
-LDLIBS = -ltag -lz
+LDLIBS = -ltag -lz 
 
 ## dieu kien thong tin bien dich ##
 ifeq ($(DEBUG), 0)
